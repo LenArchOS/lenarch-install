@@ -1,0 +1,20 @@
+# Maintainer: Lena Voytek <lena@voytek.dev>
+
+pkgname=calamares-config
+pkgver=1.0
+pkgrel=1
+pkgdesc="Calamares configuration for LenArch."
+arch=('any')
+license=('GPL')
+provides=($pkgname)
+conflicts=($pkgname)
+depends=()
+
+package() {
+	# copy whole calamares dir recursively in /etc
+	(find calamares -type f -exec install -Dm 644 "{}" "$pkgdir/etc/{}" \;)
+	# make scripts executable
+	chmod 755 "$pkgdir"/etc/calamares/launch.sh
+	chmod 755 "$pkgdir"/etc/calamares/branding/default/test_slides.sh
+}
+
