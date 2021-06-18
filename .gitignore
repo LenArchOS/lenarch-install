@@ -1,0 +1,4 @@
+build/
+calamares/calamares-*
+*/pkg/
+calamares/src/
