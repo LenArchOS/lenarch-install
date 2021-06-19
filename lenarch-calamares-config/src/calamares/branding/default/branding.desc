@@ -120,18 +120,18 @@ navigation: widget
 # are visible as buttons there if the corresponding *show* keys
 # are set to "true" (they can also be overridden).
 strings:
-    productName:         Archcraft
-    shortProductName:    Archcraft
-#    version:             2021.6 LTS
-#    shortVersion:        2021.6
-    versionedName:       Archcraft
-    shortVersionedName:  Archcraft
-    bootloaderEntryName: Archcraft
-    productUrl:          https://archcraft.io
-    supportUrl:          https://discord.gg/GvKcCCPXA6
-    knownIssuesUrl:      https://github.com/archcraft-os/archcraft/issues
-    releaseNotesUrl:     https://github.com/archcraft-os/archcraft/blob/master/changelog.md
-    donateUrl:           https://archcraft.io/donate
+    productName:         LenArch
+    shortProductName:    LenArch
+    version:             0.1.0
+    shortVersion:        0.1.0
+    versionedName:       LenArch
+    shortVersionedName:  LenArch
+    bootloaderEntryName: LenArch
+    productUrl:          https://lenarch.voytek.dev
+    #supportUrl:          https://lenarch.voytek.dev/support
+    knownIssuesUrl:      https://github.com/LenArchOS/LenArch/issues
+    releaseNotesUrl:     https://github.com/LenArchOS/LenArch/blob/main/changelog.md
+    #donateUrl:           https://lenarch.voytek.dev/donate
 
 
 # These images are loaded from the branding module directory.
@@ -180,10 +180,10 @@ images:
 # branding component also ships a stylesheet.qss. Then they are
 # the corresponding CSS attributes of #sidebarApp.
 style:
-   sidebarBackground:    "#243035"
-   sidebarText:          "#C4C7C5"
-   sidebarTextSelect:    "#212B30"
-   sidebarTextHighlight: "#4DD0E1"
+   sidebarBackground:    "#2c3b4c"
+   sidebarText:          "#f8f5f2"
+   sidebarTextSelect:    "#2c3b4c"
+   sidebarTextHighlight: "#7babf7"
 
 ### SLIDESHOW
 #

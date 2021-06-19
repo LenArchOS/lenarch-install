@@ -1,0 +1,238 @@
+/*
+ * SPDX-FileCopyrightText: no
+ * SPDX-License-Identifier: CC0-1.0
+ */
+
+/*
+A branding component can ship a stylesheet (like this one)
+which is applied to parts of the Calamares user-interface.
+In principle, all parts can be styled through CSS.
+Missing parts should be filed as issues.
+
+The IDs are based on the object names in the C++ code.
+You can use the Debug Dialog to find out object names:
+  - Open the debug dialog
+  - Choose tab *Tools*
+  - Click *Widget Tree* button
+The list of object names is printed in the log.
+
+Documentation for styling Qt Widgets through a stylesheet
+can be found at
+    https://doc.qt.io/qt-5/stylesheet-examples.html
+    https://doc.qt.io/qt-5/stylesheet-reference.html
+In Calamares, styling widget classes is supported (e.g.
+using `QComboBox` as a selector).
+
+This example stylesheet has all the actual styling commented out.
+The examples are not exhaustive.
+
+*/
+
+/*** Generic Widgets.
+ *
+ * You can style **all** widgets of a given class by selecting
+ * the class name. Some widgets have specialized sub-selectors.
+ */
+
+/*------------------------ Global Fonts -------------------*/
+*{
+    font: 12px "Iosevka Custom";
+}
+
+/*------------------------ Bottom Buttons -----------------*/
+
+QPushButton#debugButton {
+	color: #c0edc2;
+    background-color: #1A4DB6AC;
+    border-style: solid;
+    font: bold 12px;
+    padding: 8px;
+}
+
+QPushButton#view-button-back,#view-button-next,#view-button-cancel {
+/*	color: #f8f5f2;	*/
+    background-color: #2F3D44;
+    border: 1px solid #222D32;
+    border-radius: 2px;
+    font: bold 12px;
+    min-width: 4em;
+    padding: 8px;
+}
+
+QPushButton#view-button-back:hover,#view-button-next:hover,#view-button-cancel:hover {
+	color: #c0edc2;
+    background-color: #1A4DB6AC;
+    border-style: solid;
+}
+
+/*------------------------ Welcome Page Buttons ------------------------*/
+
+/*** Welcome module.
+ *
+ * There are plenty of parts, but the buttons are the most interesting
+ * ones (donate, release notes, ...). The little icon image can be
+ * styled through *qproperty-icon*, which is a little obscure.
+ * URLs can reference the QRC paths of the Calamares application
+ * or loaded via plugins or within the filesystem. There is no
+ * comprehensive list of available icons, though.
+ */
+
+#aboutButton { 
+	qproperty-icon: url(/etc/calamares/branding/default/icons/about.svg);
+    font: bold 12px;
+    min-width: 2em;
+    padding: 8px;
+}
+
+#donateButton { 
+	qproperty-icon: url(/etc/calamares/branding/default/icons/donate.svg);
+    font: bold 12px;
+    min-width: 2em;
+    padding: 8px;
+}
+
+#supportButton {
+	qproperty-icon: url(/etc/calamares/branding/default/icons/fourm.svg);
+    font: bold 12px;
+    min-width: 2em;
+    padding: 8px;
+}
+
+#releaseNotesButton {
+	qproperty-icon: url(/etc/calamares/branding/default/icons/web.svg);
+    font: bold 12px;
+    min-width: 2em;
+    padding: 8px;
+}
+
+#knownIssuesButton {
+	qproperty-icon: url(/etc/calamares/branding/default/icons/issue.svg);
+    font: bold 12px;
+    min-width: 2em;
+    padding: 8px;
+}
+
+#aboutButton:hover,#donateButton:hover,#supportButton:hover,#releaseNotesButton:hover,#knownIssuesButton:hover {
+	color: #c0edc2;
+    border-style: solid;
+    border-width: 0px;
+}
+
+/*------------------------ Welcome Page Text ------------------------*/
+
+/*-- Welcome to installer text --*/
+QLabel#mainText {
+	color: cyan;
+    font: bold 12px;
+}
+
+/*-- Language Box --*/
+QComboBox {
+    border: 1px solid #2c3b4c;
+    border-radius: 2px;
+    padding: 6px;
+    min-width: 20em;
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable {
+     background: #2F3D44;
+}
+/* QComboBox gets the "on" state when the popup is open */
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+    background: #264DB6AC;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 30px;
+
+    border-left-width: 1px;
+    border-left-color: #222D32;
+    border-left-style: solid; /* just a single line */
+    border-top-right-radius: 3px; /* same radius as the QComboBox */
+    border-bottom-right-radius: 3px;
+}
+QComboBox::down-arrow {
+    image: url(/etc/calamares/branding/default/icons/go-down.svg);
+}
+
+/*------------------------ Main App ------------------------*/
+
+/*** Main application window.
+ *
+ * The main application window has the sidebar, which in turn
+ * contains a logo and a list of items -- note that the list
+ * can **not** be styled, since it has its own custom C++
+ * delegate code.
+ */
+
+#mainApp { 
+/*	background-color: #2c3b4c;	*/
+}
+
+#sidebarApp {
+}
+
+#logoApp {
+	padding: 0px;
+}
+
+/*------------------------ Tooltip ------------------------*/
+
+QToolTip {
+    border: 1px solid #7babf7;
+    border-radius: 2px;
+    padding: 2px;
+}
+
+/*------------------------ Partition Page ------------------------*/
+
+/*** Partitioning module.
+ *
+ * Many moving parts, which you will need to experiment with.
+ */
+
+QLabel#bootInfoIcon {
+	background-color: #f8f5f2;
+    font: bold 12px;
+}
+QLabel#bootInfoLabel {
+	color: #f8f5f2;
+    font: bold 12px;
+}
+QLabel#deviceInfoIcon {
+	background-color: #f8f5f2;
+    font: bold 12px;
+}
+QLabel#deviceInfoLabel {
+	color: #f8f5f2;
+    font: bold 12px;
+}
+
+#bootInfoIcon { 
+}
+#bootInfoLable {
+}
+#deviceInfoIcon {
+}
+#defineInfoLabel {
+}
+#scrollAreaWidgetContents {
+}
+#partitionBarView {
+}
+
+/*------------------------ Licensing ------------------------*/
+
+/*** Licensing module.
+ *
+ * The licensing module paints individual widgets for each of
+ * the licenses. The item can be collapsed or expanded.
+ */
+
+#licenseItem { 
+}
+
+#licenseItemFullText {
+}
